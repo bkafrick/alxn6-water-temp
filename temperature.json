@@ -1,0 +1,42 @@
+[
+  {
+    "date": "2025-04-25",
+    "day": "Friday",
+    "avg_temp_f": 42.95
+  },
+  {
+    "date": "2025-04-26",
+    "day": "Saturday",
+    "avg_temp_f": 42.95
+  },
+  {
+    "date": "2025-04-27",
+    "day": "Sunday",
+    "avg_temp_f": 43.03
+  },
+  {
+    "date": "2025-04-28",
+    "day": "Monday",
+    "avg_temp_f": 43.44
+  },
+  {
+    "date": "2025-04-29",
+    "day": "Tuesday",
+    "avg_temp_f": 44.02
+  },
+  {
+    "date": "2025-04-30",
+    "day": "Wednesday",
+    "avg_temp_f": 44.22
+  },
+  {
+    "date": "2025-05-01",
+    "day": "Thursday",
+    "avg_temp_f": 44.67
+  },
+  {
+    "date": "2025-05-02",
+    "day": "Friday",
+    "avg_temp_f": 45.62
+  }
+]

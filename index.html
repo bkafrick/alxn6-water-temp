@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alexandria Bay Water Temperature</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h2>Alexandria Bay Water Temperature</h2>
+  <canvas id="tempChart" width="600" height="400"></canvas>
+
+  <script>
+    fetch('temperature.json')
+      .then(response => response.json())
+      .then(data => {
+        const labels = data.map(entry => {
+  		const [year, month, day] = entry.date.split("-");
+  		return `${entry.day} (${parseInt(month)}-${day})`;
+	});
+        const temps = data.map(entry => entry.avg_temp_f);
+
+        const ctx = document.getElementById('tempChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'Avg Temp (°F)',
+              data: temps,
+              borderColor: 'blue',
+              borderWidth: 2,
+              fill: false,
+              tension: 0.2,
+              pointBackgroundColor: 'blue'
+            }]
+          },
+          options: {
+            responsive: false,
+            plugins: {
+              datalabels: {
+                anchor: 'end',
+                align: 'top',
+                font: {
+                  weight: 'bold'
+                },
+                formatter: value => `${value}°`
+              }
+            },
+            scales: {
+              x: {
+                ticks: {
+                  maxRotation: 45,
+                  minRotation: 0,
+                  callback: function(value, index) {
+                    return window.innerWidth < 400 && index % 2 !== 0
+                      ? ''
+                      : this.getLabelForValue(value);
+                  }
+                },
+                title: { display: true, text: 'Date' }
+              },
+              y: {
+                min: 32,
+                max: 100,
+                title: { display: true, text: 'Temp (°F)' }
+              }
+            }
+          },
+          plugins: [ChartDataLabels]
+        });
+      })
+      .catch(err => {
+        document.body.innerHTML += `<p style="color:red;">Error loading data: ${err.message}</p>`;
+      });
+  </script>
+</body>
+</html>
