@@ -1,10 +1,5 @@
 [
   {
-    "date": "2025-05-31",
-    "day": "Saturday",
-    "avg_temp_f": 54.78
-  },
-  {
     "date": "2025-06-01",
     "day": "Sunday",
     "avg_temp_f": 54.22
@@ -37,6 +32,11 @@
   {
     "date": "2025-06-07",
     "day": "Saturday",
-    "avg_temp_f": 54.77
+    "avg_temp_f": 55.12
+  },
+  {
+    "date": "2025-06-08",
+    "day": "Sunday",
+    "avg_temp_f": 55.59
   }
 ]
