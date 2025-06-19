@@ -1,10 +1,5 @@
 [
   {
-    "date": "2025-06-11",
-    "day": "Wednesday",
-    "avg_temp_f": 57.7
-  },
-  {
     "date": "2025-06-12",
     "day": "Thursday",
     "avg_temp_f": 59.7
@@ -37,6 +32,11 @@
   {
     "date": "2025-06-18",
     "day": "Wednesday",
-    "avg_temp_f": 60.45
+    "avg_temp_f": 60.71
+  },
+  {
+    "date": "2025-06-19",
+    "day": "Thursday",
+    "avg_temp_f": 61.45
   }
 ]
